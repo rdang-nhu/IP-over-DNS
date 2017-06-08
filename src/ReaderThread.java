@@ -23,7 +23,11 @@ public class ReaderThread extends Thread{
 			try {
 				l = stream.read(bytes);
 				if(l != 0){
-					queue.put(bytes);
+					byte[] bytes2 = new byte[l];
+					for(int i = 0; i<l;i++){
+						bytes2[l]=bytes[l];
+					}
+					queue.put(bytes2);
 					/*System.out.println("lu sur tun1 :");
 					for (byte theByte : bytes)
 					{
